@@ -1,0 +1,1278 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap');
+
+@font-face {
+   font-family: Brandon reg;
+   src: url(fonts/Brandon_reg.otf);
+}
+
+@font-face {
+   font-family: Brandon bld;
+   src: url(fonts/Brandon_bld.otf);
+}
+
+/*-------------------------------------------- DIRECTORIES --------------------------------------------*/
+/*----------------------------------------------
+   1. universal stuffs
+   2. header - nav & toggle
+   3. index class - hello & heart
+   4. section titles / travels, passion, system
+   5. section - about me
+   6. section - travels
+   7. section - passion
+   8. section - system
+   9. footer
+   10. travels / boracay & singapore
+----------------------------------------------*/
+
+
+/*------------------------ 1. universal stuffs ------------------------*/
+html, body {
+   min-height: 100vh;
+   overflow: auto;
+   font-family: 'Roboto Mono', monospace;
+   color: #464646;
+}
+
+header {
+   width: 100%;
+}
+
+main, footer {
+   background-color: #f1f1f1;
+   background-image: url('img/vintage-speckles.png');
+}
+
+footer {
+   bottom: 0;
+}
+
+.whitespace {
+   height: 40px;
+}
+/*------------------------------- END1 -------------------------------*/
+
+
+/*-------------------- 2. header - nav & toggle --------------------*/
+/*--------------------
+   toggle stuffs
+      /button/
+--------------------*/
+.index-toggle {
+   position: fixed;
+   height: 50px;
+   width: 50px;
+   top: 10px;
+   left: 10px;
+   background-color: #4B4A47;
+   border-radius: 10px;
+   transition: all 0.35s ease-out;
+   visibility: visible;
+   opacity: 1;
+   z-index: 3;
+   cursor: pointer;
+}
+
+.index-toggle .toggle-btn {
+   width: 100%;
+   height: 100%;
+   background-image: url(img/toggle1.png);
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: 95%;
+   z-index: 3;
+}
+
+/*--------------------
+   toggle stuffs
+      /links/
+--------------------*/
+.toggle-link {
+   width: 100%;
+   height: 60px;
+   position: fixed;
+   top: 0;
+   background-color: #F1F1F1;
+   transition: all 1s ease-out;
+   visibility: hidden;
+   z-index: 2;
+   overflow: hidden;
+}
+
+.toggle-link ul{
+   height: 100%;
+   position: absolute;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   z-index: 1;
+}
+
+.toggle-link ul li {
+   line-height: 90px;
+}
+
+.toggle-link ul li a {
+   display: block;
+   width: calc(100vw - 20px);
+   margin: 0 10px;
+   text-decoration: none;
+   font-size: 20px;
+   color: #BB7B90;
+}
+
+.toggle-link ul li a:hover {
+   background-color: rgba(185, 123, 144, 0.7);
+   color: #F1F1F1;
+}
+
+nav {
+   display: none;
+}
+
+/*--------------------
+   end toggle stuffs
+--------------------*/
+
+/*--------------------
+     navbar stuffs
+    /ipad-desktop/
+--------------------*/
+@media only screen and (min-width: 768px) {
+   .index-toggle, .toggle-link {
+      visibility: hidden;
+   }
+   
+   nav {
+      display: block;
+      width: 100vw;
+      height: 80px;
+      position: fixed;
+      background-color: #AE8D92;
+      box-shadow: 2px 2px 8px #111;
+      z-index: 999;
+   }
+   
+   nav .nav-links {
+      float: left;
+      right: 40px;
+      position: fixed;
+   }
+   
+   nav .nav-links li {
+      display: inline-block;
+      position: relative;
+      cursor: pointer;
+      line-height: 80px;
+      padding-left: 20px;
+   }
+   
+   nav .nav-links li a {
+      font-size: 17px;
+      color: #FFF;
+      text-shadow: 1px 1px 10px #333333;
+      text-decoration: none;
+   }
+   
+   nav .nav-links li a:hover {
+      border-bottom: 5px solid #F1F1F1;
+      transition: all 0.35s ease-in-out;
+   }
+}
+
+@media only screen and (min-width: 1024px) {
+   nav .nav-links li a {
+      font-size: 20px;
+   }
+}
+/*--------------------
+   end nav stuffs
+--------------------*/
+/*------------------------------- END2 -------------------------------*/
+
+/*----------------- 3. index class - hello & heart ------------------*/
+.index {
+   width: 100%;
+   height: 100vh;
+   background-color: rgba(244, 235, 243, .1);
+   position: relative;
+}
+
+.index::before {
+   content: '';
+   background-image: url('img/bgimg.jpeg');
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center center;
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   z-index: -1;
+}
+
+/*--------------------
+         hello
+--------------------*/
+.index-hello {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 85%;
+}
+
+.hello-box {
+   height: 70px;
+}
+
+.line {
+   width: 255px;
+   text-align: center;
+   text-shadow: 2px 2px 8px #111;
+   font-size: 70px;
+   border-right: 5px solid #BB7B90;
+   overflow: hidden;
+   white-space: nowrap;
+   
+}
+
+.anim-typewriter {
+   animation: typewriter 3.5s steps(13) 1s 1 normal both,
+   blinkTextCursor 500ms steps(13) infinite normal;
+}
+
+@keyframes typewriter {
+   from {
+      width: 0;
+   }
+   to {
+      width: 255px;
+   }
+}
+
+@keyframes blinkTextCursor {
+   from {
+      border-right-color: #BB7B90;
+   }
+   to {
+      border-right-color: transparent;
+   }
+}
+
+.index-hello h1 {
+   line-height: 70px;
+   font-weight: 200;
+   color: #F1F1F1;
+}
+/*--------------------
+      end hello
+--------------------*/
+/*--------------------
+         heart
+--------------------*/
+.heart {
+   width: 30px;
+   height: 60px;
+   position: absolute;
+   left: 48vw;
+   bottom: 50px;
+   background-color: transparent;
+   background-image: url('img/heart.png');
+   background-size: 100%;
+   background-repeat: no-repeat;
+   animation: falling_heart 2s linear infinite;
+}
+
+@keyframes falling_heart {
+   0% {
+         transform: translate(0, -25px);
+         opacity: 0;
+   }
+   50% {
+         opacity: 1;
+   }
+   100% {
+         transform: translate(0, 25px);
+         opacity: 0;
+   }
+}
+/*--------------------
+      end heart
+--------------------*/
+/*------------------------------- END3 -------------------------------*/
+
+/*----------- 4. section titles / travels, passion, system ----------*/
+.section-title {
+   margin: 0 auto;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-content: center;
+   width: 315px;
+}
+
+.section-title div {
+   width: 25px;
+   height: 2px;
+   background-color: #F1F1F1;
+   align-self: center;
+}
+
+#passion-title div {
+background-color: #464646;
+}
+
+.section-title p {
+   text-align: center;
+   font-size: 13px;
+   line-height: 30px;
+   margin: 0 3px;
+   color: #F1F1F1;
+}
+
+#passion-title p {
+   color: #464646;
+}
+
+#system-title p {
+   font-size: 18px;
+   text-shadow: 1px 1px 10px #111;
+}
+
+@media only screen and (min-width: 768px) {
+   .section-title {
+      width: 100%;
+      top: 40px;
+   }
+
+   .section-title div {
+      width: 50px;
+      height: 3px;
+      margin: 0 30px;
+   }
+
+   .section-title p {
+      font-size: 22px;
+      line-height: 40px;
+   }
+
+   #travels-title p {
+      font-size: 21px;
+   }
+
+   #system-title p  {
+      font-size: 22px;
+   }
+}
+/*------------------------------- END4 -------------------------------*/
+
+/*---------------------- 5. section - about me ----------------------*/
+.wrapper {
+   margin: 0 auto;
+   width: 315px;
+}
+
+.about-me-container {
+   position: relative;
+   height: 1000px;
+}
+
+#aboutme-box {
+   position: relative;
+   top: 40px;
+   width: 120px;
+   height: 30px;
+   border-bottom: 5px solid #BB7B90;
+}
+
+#aboutme-box p {
+   text-align: right;
+   font-size: 18px;
+   color: #BB7B90;
+   line-height: 30px;
+}
+
+.about-me-img {
+   position: absolute;
+   width: 230px;
+   height: 310px;
+   top: 100px;
+   background-image: url('img/aboutme.jpg');
+   background-position: center center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   z-index: 1;
+}
+
+.about-me-overlay {
+   position: relative;
+   width: 230px;
+   height: 310px;
+   top: 80px;
+   left: 85px;
+   background-color: #E3D8D4;
+}
+
+.about-me-overlay .overlay-para p {
+   display: none;
+}
+
+.about-me-overlay #name {
+   position: absolute;
+   top: 20px;
+   left: 160px;
+   font-family: 'Brandon bld', helvetica;
+   font-size: 25px;
+   color: #F1F1F1;
+   text-align: center;
+
+}
+
+.about-me-overlay #surname {
+   position: absolute;
+   top: 100px;
+   left: 190px;
+   font-family: 'Brandon bld', helvetica;
+   font-size: 25px;
+   color: #506572;
+   text-align: center;
+}
+
+.about-me-parag {
+   position: relative;
+   top: 100px;
+}
+
+.about-me-parag p {
+   font-family: 'Brandon reg', helvetica;
+   font-size: 16px;
+   line-height: 25px;
+   word-spacing: 2px;
+}
+
+@media only screen and (min-width: 768px) {
+   .wrapper {
+      margin: 0 auto;
+      width: 650px;
+   }
+
+   .about-me-container {
+      height: 1220px;
+   }
+
+   #aboutme-box {
+      height: 40px;
+      width: 245px;
+   }
+
+   #aboutme-box p {
+      font-size: 30px;
+      line-height: 40px;
+   }
+
+   .about-me-img {
+      width: 400px;
+      height: 520px;
+      top: 100px;
+   }
+   
+   .about-me-overlay {
+      position: relative;
+      width: 400px;
+      height: 520px;
+      top: 100px;
+      left: 200px;
+   }
+   
+   .about-me-overlay #name {
+      top: 20px;
+      left: 230px;
+      font-size: 50px;
+   }
+   
+   .about-me-overlay #surname {
+      top: 85px;
+      left: 290px;
+      font-size: 50px;
+   }
+   
+   .about-me-parag {
+      position: relative;
+      top: 120px;
+   }
+   
+   .about-me-parag p {
+      font-size: 20px;
+      line-height: 35px;
+      word-spacing: 3px;
+   }
+}
+
+@media only screen and (min-width: 1024px) {
+   .wrapper {
+      width: 1000px;
+   }
+
+   .about-me-container {
+      height: 790px;
+      margin: 0 auto;
+      overflow: hidden;
+   }
+
+   #aboutme-box {
+      height: 40px;
+      width: 300px;
+   }
+
+   #aboutme-box p {
+      font-size: 35px;
+      line-height: 40px;
+   }
+
+   .about-me-img {
+      width: 400px;
+      height: 585px;
+      top: 120px;
+   }
+   
+   .about-me-overlay {
+      position: relative;
+      width: 800px;
+      height: 580px;
+      top: 120px;
+   }
+   
+   .about-me-overlay #name {
+      top: 20px;
+      left: 210px;
+      font-size: 50px;
+   }
+   
+   .about-me-overlay #surname {
+      top: 110px;
+      left: 255px;
+      font-size: 50px;
+   }
+   
+   .about-me-parag {
+      position: absolute;
+      top: 200px;
+      left: 52%;
+      width: 450px;
+      height: 525px;
+   }
+   .about-me-parag p {
+      font-size: 20px;
+      line-height: 29px;
+   }
+}
+/*------------------------------- END5 -------------------------------*/
+
+/*--------------------- 6. section - travels ------------------------*/
+.travels-container {
+   position: relative;
+   background: #506572;
+   background-image: url('img/vintage-speckles.png');
+}
+
+.travel-pic1, .travel-pic2 {
+   border-radius: 20px 20px 0 0;
+   width: 315px;
+   height: 290px;
+   overflow: hidden;
+   cursor: pointer;
+}
+
+.travel-pic1 img, .travel-pic2 img {
+   width: 100%;
+   height: 100%;
+   background-position: center center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   transition: all 0.3s ease-out;
+}
+
+.travel-pic1 img:hover {
+   transform: scale(1.1);
+}
+
+.travel-pic2 img:hover {
+   transform: scale(1.1);
+}
+
+.travel-details {
+   width: 315px;
+   height: 220px;
+   background-color: #F1F1F1;
+   border-radius: 0 0 20px 20px;
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   align-items: center;
+   overflow: hidden;
+}
+
+.travel-details h2 {
+   font-size: 20px;
+   line-height: 30px; 
+}
+
+.travel-details .date {
+   font-size: 13px;
+}
+
+.travel-details p {
+   font-family: 'Brandon reg', helvetica;
+   font-size: 15px;
+   line-height: 20px; 
+   padding: 10px;
+}
+
+.read-more-btn {
+   width: 100px;
+   height: 40px;
+   margin: 10px;
+   border-radius: 15px;
+   background-color: #AE8D92;
+   color: #F1F1F1;
+   text-decoration: none;
+   text-align: center;
+   font-size: 15px;
+   line-height: 40px;
+   margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+   .travels-location {
+      display: flex;
+      flex-direction: row;
+      align-content: center;
+      align-items: center;
+      justify-content: space-between;
+   }
+}
+
+@media only screen and (min-width: 1024px) {
+   .travel-pic1 {
+      width: 490px;
+      height: 350px;
+   }
+   
+   .travel-pic2 {
+      width: 490px;
+      height: 350px;
+   }
+   
+   .travel-details {
+      width: 490px;
+      height: 220px;
+      align-content: center;
+   }
+   
+   .travel-details p {
+      font-family: 'Brandon reg', helvetica;
+      word-spacing: 5px;
+      font-size: 18px;
+      line-height: 20px; 
+      margin: 0 20px;
+   }
+   
+   .read-more-btn {
+      width: 100px;
+      height: 40px;
+      margin: 10px;
+      border-radius: 15px;
+      background-color: #AE8D92;
+      color: #F1F1F1;
+      text-decoration: none;
+      text-align: center;
+      font-size: 15px;
+      line-height: 40px;
+      margin-bottom: 20px;
+   }
+}
+/*------------------------------- END6 -------------------------------*/
+
+/*------------------------ 7. section - passion ---------------------*/
+.my-passion-container {
+   position: relative;
+}
+
+.passion-description {
+   font-size: 13px;
+   line-height: 20px;
+   color: #464646;
+   margin: 10px 40px;
+   text-align: center;
+}
+
+.gallery-wrapper {
+   padding: 0 10px;
+}
+
+.passion-gallery {
+   width: 100%;
+   display: grid;
+   grid-auto-flow: dense;
+   grid-template: "1fr 1fr" 250px
+                  "1fr 1fr" 250px
+                  "1fr 1fr" 250px
+                  "1fr 1fr" 250px
+                  "1fr 1fr" 250px
+                  "1fr 1fr" 250px
+                  "1fr 1fr" 250px
+                  "1fr 1fr" 250px;      
+}
+
+.passion-gallery .box {
+   position: relative;
+}
+
+.passion-gallery .box img {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   object-position: center center;
+   transition: 400ms;
+   display: block;
+}
+
+.hobby {
+   position: relative;
+   text-align: center;
+}
+
+.hobby p {
+   position: absolute;
+   font-size: 13.5px;
+   color: rgb(187, 81, 117);
+   background-color: #F1F1F1;
+   bottom: 8px;
+   right: 16px;
+}
+
+@media only screen and (min-width: 768px) {
+   .passion-description {
+      font-size: 17px;
+   }
+
+   .passion-gallery {
+      width: 100%;
+      display: grid;
+      grid-auto-flow: dense;
+      grid-template: "1fr 1fr 1fr" 250px
+                     "1fr 1fr 1fr" 250px
+                     "1fr 1fr 1fr" 250px
+                     "1fr 1fr 1fr" 250px
+                     "1fr 1fr 1fr" 250px
+                     "1fr 1fr 1fr" 250px
+                     "1fr 1fr 1fr" 250px;     
+   }
+
+   .box.hobby.one, .j {
+      grid-row: span 2;
+   }
+
+   .box.a, .e, .m {
+      grid-column: span 2;
+   }
+
+   .passion-gallery .box img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      z-index: 1;
+   }
+}
+
+@media only screen and (min-width: 1024px) {
+   .passion-gallery {
+      width: 100%;
+      display: grid;
+      grid-auto-flow: dense;
+      grid-template: "1fr 1fr 1fr 1fr 1fr" 250px
+                     "1fr 1fr 1fr 1fr 1fr" 250px
+                     "1fr 1fr 1fr 1fr 1fr" 250px
+                     "1fr 1fr 1fr 1fr 1fr" 250px
+                     "1fr 1fr 1fr 1fr 1fr" 250px;    
+   }
+
+   .box.hobby.one, .f {
+      grid-row: span 2;
+   }
+
+   .box.g {
+      grid-column: span 2;
+      grid-row: span 2;
+   }
+}
+/*------------------------------- END7 -------------------------------*/
+
+/*---------------------- 8. section - system -------------------------*/
+
+.my-system-container {
+   background-image: url('img/sys.jpg');
+   background-position: center;
+   background-size: cover;
+}
+
+.system-links {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-content: center;
+   text-align: center;
+}
+
+.system-links li {
+   cursor: pointer;
+}
+
+.system-links a {
+   color: #F1F1F1;
+   font-size: 13.5px;
+   line-height: 30px;
+   text-decoration: none;
+   text-shadow: 1px 1px 10px #333333;
+}
+
+.system-links a:hover {
+   border-bottom: 2px solid #F1F1F1;
+   animation: 300ms ease-in;
+}
+
+@media only screen and (min-width: 768px) {
+   .system-links a {
+      color: #F1F1F1;
+      font-size: 17px;
+      line-height: 40px;
+   }
+}
+/*------------------------------- END8 -------------------------------*/
+
+/*---------------------------- 9. footer -----------------------------*/
+
+.footer-container {
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+   text-decoration: none;
+   list-style: none;
+   font-size: 13.5px;
+   line-height: 30px;
+   color: #464646c5;
+}
+
+.footer-connect a {
+   text-decoration: none;
+   line-height: 30px;
+   color: #464646;
+}
+
+.footer-connect a span {
+   font-weight: bolder;
+   font-size: 15px;
+   color: #0077B5;
+}
+
+.footer-follow li {
+   list-style: none;
+   display: inline-block;
+}
+
+.footer-follow a {
+   text-decoration: none; 
+   line-height: 30px;
+   color: #464646;
+}
+
+.footer-follow a span {
+   font-weight: bolder;
+   font-size: 15px;
+ }
+ 
+#fb span {
+   color: #3B5998;
+}
+
+ #ig span {
+   color: #FB3958;
+}
+
+.footer-hello p:nth-child(2) {
+   color: #464646;
+}
+
+@media only screen and (min-width: 768px) {
+
+   .footer-container {
+      flex-direction: row;
+      justify-content: space-between;
+      font-size: 15px;
+      padding: 0 50px;
+   }
+   
+   .footer-connect {
+      text-align: left;
+   }
+
+   .footer-follow, .footer-hello {
+      text-align: left;
+   }
+   
+   .footer-connect a span {
+      font-size: 20px;
+   }
+   
+   .footer-follow a span {
+      font-size: 20px;
+    }  
+}
+
+@media only screen and (min-width: 1024px) {
+   .footer-follow {
+      margin-right: 50%;
+   }
+}
+
+/*------------------------------- END9 -------------------------------*/
+
+/*---------------- 10. travels / boracay & singapore -----------------*/
+
+.boracay-box {
+   display: block;
+   color: #F1F1F1;
+   padding: 40px;
+}
+
+/*--------------------
+      main stuffs
+--------------------*/
+
+.travel-box-main {
+   display: block;
+}
+
+.travels-img-main  {
+   position: relative;
+   margin: 0 auto;
+   height: 300px;
+   min-width: 250px;
+   max-width: 680px;
+   overflow: hidden;
+}
+
+.travels-img-main img {
+   position: absolute;
+   height: 100%;
+   width: 100%;
+   object-fit: cover;
+   display: block;
+   transition: all 0.3s ease-out;
+}
+
+.travels-title-main {
+   font-size: 20px;
+   line-height: 30px;
+   padding-top: 15px;
+   margin: 0 auto;
+   letter-spacing: 3px;
+   text-shadow: 2px 2px 8px #111;
+}
+
+/*--------------------
+   sub img / title
+--------------------*/
+
+.travel-box {
+   position: relative;
+   height: 320px;
+   width: 100%;
+   margin: 0 auto;
+   margin-top: 20px;
+}
+
+.travels-img  {
+   position: relative;
+   margin: 0 auto;
+   height: 90%;
+   width: 100%;
+}
+
+.travels-img img {
+   position: absolute;
+   height: 100%;
+   width: 100%;
+   object-fit: cover;
+   display: block;
+   transition: all 0.3s ease-out;
+}
+
+.travels-desc-left, .travels-desc-right {
+   position: absolute;
+   font-size: 17px;
+   line-height: 30px;
+}
+
+.travels-desc-right {
+   right: 0;
+}
+
+.boracay-box p span {
+   font-size: 20px;
+   font-weight: bolder;
+}
+
+/*--------------------
+   sub description
+--------------------*/
+
+.travels-desc {
+   font-family: 'Brandon reg', helvetica;
+   font-size: 18px;
+   line-height: 30px;
+   padding-bottom: 10px; 
+   margin: 0 auto;
+}
+
+.desc-box {
+   position: relative;
+   width: 100%;
+}
+
+.travels-desc-sub {
+   font-family: 'Brandon reg', helvetica;
+   font-size: 18px;
+   line-height: 30px;
+   width: 100%;
+}
+
+.travels-desc-sub.right {
+   text-align: right;
+}
+
+.travels-desc-sub.left {
+   text-align: left;
+}
+
+
+@media only screen and (min-width: 768px) {
+   .boracay-box {
+      position: relative;
+      padding: 80px;
+      top: 50px;
+   }
+
+   .boracay-box p span {
+      font-size: 30px;
+   }
+
+   /*--------------------
+         main stuffs
+   --------------------*/
+
+   .travels-img-main  {
+      min-height: 400px;
+      max-width: 100%;
+      transition: all 0.3s ease-out;
+   }
+
+   .travels-img-main img:hover {
+      transform: scale(1.1);
+   }
+
+   .travels-title-main {
+      font-size: 30px;
+      line-height: 50px;
+   }
+   
+   /*--------------------
+      sub img / title
+   --------------------*/
+
+   .travels-img  {
+      position: absolute;
+      height: 90%;
+      min-width: 580px;
+      max-width: 650px;
+      overflow: hidden;
+   }
+
+   .travels-img img:hover {
+      transform: scale(1.1);
+   }
+
+   .travels-img.right {
+      right: 0;
+   }
+   
+   /*--------------------
+      sub description
+   --------------------*/
+
+   .desc-box {
+      position: relative;
+      width: 100%;
+      padding-bottom: 30px;
+   }
+
+   #uss {
+      height: 260px;
+   }
+
+   #gbtb {
+      height: 170px;
+   }
+
+   #zoo {
+      height: 140px;
+   }
+
+   #skypark {
+      height: 180px;
+   }
+
+   #uss {
+      height: 300px;
+   }
+
+   #helix {
+      height: 40px;
+   }
+
+
+   .travels-desc-sub {
+      position: absolute;
+   }
+
+   .travels-desc, .travels-desc-sub {
+      font-size: 22px;
+      line-height: 35px;
+      word-spacing: 5px;  
+   }
+
+   .travels-desc-sub {
+      width: 580px;
+      display: block;
+   }
+   
+   .travels-desc-left, .travels-desc-sub.left {
+      right: 0;
+   }
+
+   .travels-desc-right {
+      left: 0;
+   }
+
+   .travels-desc-sub.right {
+      text-align: left;
+   }
+   
+   .travels-desc-sub.left {
+      text-align: right;
+   }
+
+   .travels-desc-left, .travels-desc-right {
+      font-size: 25px;
+      bottom: 0;
+      text-shadow: 2px 2px 8px #111;
+   }
+}
+
+@media only screen and (min-width: 1360px) {
+   .boracay-box {
+      padding: 40px;
+   }
+
+   .boracay-box p span {
+      font-size: 35px;
+   }
+
+   /*--------------------
+         main stuffs
+   --------------------*/
+
+   .travel-box-main {
+      position: relative;
+      height: 530px;
+      min-width: 900px;
+   }
+
+   .travels-img-main {
+      height: 500px;
+      max-width: 70%;
+      margin-left: 0;
+   }
+
+   /* main title stuff */
+   .travels-title-main {
+      position: absolute;
+      line-height: 40px;
+      width: 28%;
+      letter-spacing: 1px;
+   }
+
+   #boracay-title {
+      top: 30%;
+      right: 0;
+   }
+
+   #singapore-title {
+      top: 0;
+      right: 0;
+   }
+
+   /* main description stuff */
+   .travels-desc {
+      word-spacing: 3px;
+      line-height: 35px;
+      text-align: left;
+      width: 28%;
+      position: absolute;
+   }
+
+   .travels-desc.boracay-desc {
+      right: 0;
+      top: 48%;
+   }
+
+   .travels-desc.singapore-desc {
+      right: 0;
+      top: 10%;
+   }
+
+   /*--------------------
+      sub img / title
+   --------------------*/
+
+   .travel-box-bora {
+      position: relative;
+      height: 500px;
+      padding-bottom: 20px;
+   }
+   
+   .travels-img  {
+      position: absolute;
+      height: 100%;
+      min-width: 520px;
+      max-width: 650px;
+   }
+     
+   .travels-desc-left, .travels-desc-right {
+      font-size: 30px;
+      bottom: 25%;
+      left: 45%;
+   }
+
+   /*--------------------
+      sub description
+   --------------------*/
+
+   .travels-desc-sub {
+      width: 650px;
+   }
+}
+/*------------------------------- END10 ------------------------------*/
