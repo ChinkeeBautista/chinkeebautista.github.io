@@ -397,7 +397,7 @@ background-color: #464646;
    width: 230px;
    height: 310px;
    top: 100px;
-   background-image: url('img/aboutme.jpg');
+   background-image: url('img/aboutme.JPG');
    background-position: center center;
    background-size: cover;
    background-repeat: no-repeat;
@@ -814,7 +814,7 @@ background-color: #464646;
 /*---------------------- 8. section - system -------------------------*/
 
 .my-system-container {
-   background-image: url('img/sys.jpg');
+   background-image: url('img/sys.JPG');
    background-position: center;
    background-size: cover;
 }
